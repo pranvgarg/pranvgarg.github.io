@@ -332,6 +332,14 @@ td {
   color: var(--accent-color);
 }
 
+/* Fix for project content text color */
+.project-content p, 
+.project-content ul, 
+.project-content li {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
 /* Highlighted Projects */
 tr[bgcolor="#ffffd0"] {
   background-color: var(--highlight-bg) !important;
