@@ -534,6 +534,62 @@ footer {
   border-width: 0;
 }
 
+/* Minecraft Player Styles */
+.minecraft-container {
+  position: fixed;
+  bottom: -80px; /* Start hidden below the viewport */
+  right: 20px;
+  transition: bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.minecraft-container.visible {
+  bottom: 20px; /* Pop up when visible */
+  pointer-events: auto;
+}
+
+.minecraft-player {
+  width: 64px;
+  height: 64px;
+  background-image: url('https://www.minecraft.net/content/dam/games/minecraft/game-characters/MC-Steve-1920x1080.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  cursor: pointer;
+  image-rendering: pixelated;
+  transform-origin: bottom center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.minecraft-player:hover {
+  transform: scale(1.1);
+}
+
+.minecraft-message {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  background-color: white;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-family: 'Minecraft', 'Courier New', monospace;
+  font-size: 14px;
+  text-transform: lowercase;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.minecraft-player:hover + .minecraft-message,
+.minecraft-message.message-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   body {
@@ -616,6 +672,21 @@ footer {
     font-size: 0.9em;
     line-height: 1.4;
   }
+  
+  /* Minecraft adjustments for mobile */
+  .minecraft-container {
+    right: 10px;
+  }
+  
+  .minecraft-player {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .minecraft-message {
+    font-size: 12px;
+    top: -25px;
+  }
 }
 
 /* Small mobile devices */
@@ -657,6 +728,18 @@ footer {
   .project-content li {
     text-align: left;
     word-break: break-word;
+  }
+  
+  /* Minecraft adjustments for small mobile */
+  .minecraft-player {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .minecraft-message {
+    font-size: 11px;
+    top: -22px;
+    padding: 3px 6px;
   }
 }
 
