@@ -16,6 +16,7 @@
 @import 'components/links.css';
 @import 'components/theme-toggle.css';
 @import 'components/minecraft.css';
+@import 'components/minecraft-hover.css';
 
 /* Utilities */
 @import 'utilities/responsive.css';
