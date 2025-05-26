@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const themeToggle = document.getElementById('theme-toggle');
   const themeAnnouncement = document.getElementById('theme-announcement');
+  const emailLink = document.querySelector('#email a');
   
   // Function to set theme with announcement for screen readers
   function setTheme(theme) {
@@ -10,6 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Announce theme change for screen readers
     themeAnnouncement.textContent = `Theme changed to ${theme} mode`;
+    
+    // Add animation class to email for theme change visual indication
+    if (emailLink) {
+      emailLink.classList.add('theme-transition');
+      setTimeout(() => {
+        emailLink.classList.remove('theme-transition');
+      }, 500);
+    }
   }
   
   // Check for saved theme preference or use user's system preference

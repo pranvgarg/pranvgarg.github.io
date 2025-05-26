@@ -231,15 +231,40 @@ a:hover:after {
 /* Email link styling - adapts to theme */
 #email a {
   color: var(--text-color);
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  position: relative;
 }
 
 #email a:hover {
   color: var(--accent-color);
+  transform: translateY(-2px);
 }
 
 #email a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
   background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+#email a:hover:after {
+  width: 100%;
+}
+
+/* Theme transition effect for email */
+[data-theme="light"] #email a {
+  color: var(--text-color);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+[data-theme="dark"] #email a {
+  color: var(--text-color);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 
 /* Icons and Images */
