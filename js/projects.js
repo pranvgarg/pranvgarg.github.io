@@ -27,6 +27,16 @@ const projects = [
     improvements: "Refining the model by separately training visually similar classes and exploring advanced architectures could further enhance accuracy while maintaining generalization."
   },
   {
+    image: "images/project/image4.png",
+    imageAlt: "Competitive Analysis Output",
+    title: "Competitive Analysis of Entry-Level Luxury Car Market",
+    link: "https://github.com/pranvgarg/Competitive-Analysis-Entry-Level-Luxury-Car-Market",
+    learnings: "Analyzed social media data to explore customer preferences, brand dynamics, and the factors shaping brand appeal in the luxury car segment.",
+    insights: [
+      "Uncovered distinct brand groupings; BMW and Audi stood out for their aspirational appeal, while Cadillac led in luxury perception."
+    ]
+  },
+  {
     highlighted: true,
     image: "images/project/icu_mortality.png",
     imageAlt: "ICU Mortality Prediction",
@@ -38,6 +48,30 @@ const projects = [
       "It was interesting to observe how the MLP model outperformed traditional methods like APACHE in terms of recall, which is crucial for minimizing false negatives in critical healthcare predictions."
     ],
     additionalLink: "https://medium.com/@pg.garg.pranav/predicting-icu-mortality-using-machine-learning-a-global-perspective-dc18d009afb0"
+  },
+  {
+    image: "images/project/fragrances.png",
+    imageAlt: "Fragrances Recommender System",
+    title: "Fragrances Recommender System",
+    link: "https://github.com/pranvgarg/Fragrances-Recommender-System",
+    learnings: "I gained experience in developing a personalized fragrance recommendation engine by scraping over 44,000 fragrance reviews from the Base Notes forum. I applied advanced NLP techniques like BERT for topic modeling, sentiment analysis for customer feedback, and built an API to integrate the system with e-commerce platforms for both online and in-store applications.",
+    insights: [
+      "The system effectively matches user preferences with product recommendations.",
+      "I observed that leveraging customer feedback and identifying key attributes in reviews improved the relevance of the suggestions.",
+      "Using topic modeling helped identify the most desired fragrance attributes, boosting customer satisfaction."
+    ]
+  },
+  {
+    image: "images/project/heartbeat.png",
+    imageAlt: "Heartbeat Anomaly Detection",
+    title: "LSTM Autoencoder and CNN for Heartbeat Anomaly Detection",
+    link: "https://github.com/pranvgarg/HeartBeat-Detection",
+    learnings: "This project gave me hands-on experience in using <span class=\"highlight\">CNNs</span> for feature extraction and <span class=\"highlight\">LSTM Autoencoders</span> for detecting heartbeat anomalies in time-series data. I gained knowledge in preprocessing time-series data, handling missing values, and applying MinMaxScaler to scale features. I also explored anomaly detection using reconstruction errors from LSTM models.",
+    insights: [
+      "The combination of CNNs for feature extraction and LSTM Autoencoders for sequence modeling proved effective in detecting anomalies in heartbeat signals.",
+      "I learned how to use reconstruction error as a key indicator for anomaly detection, and how cross-validation can improve model reliability.",
+      "The Precision-Recall Curve (PRC) and AUPRC were crucial in evaluating model performance."
+    ]
   }
 ];
 
