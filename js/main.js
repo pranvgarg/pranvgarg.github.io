@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeEmailScrambler();
   createProjectCards();
   initializeMinecraftPlayer();
-  initializeMinecraftHoverEffect();
   
   // Initialize smooth scrolling for anchor links
   initializeSmoothScrolling();
