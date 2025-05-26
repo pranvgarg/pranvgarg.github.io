@@ -553,9 +553,9 @@ footer {
   width: 64px;
   height: 64px;
   background-color: var(--accent-color);
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 2h8v2h-8zM3 4h10v7h-2v3h-6v-3h-2z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 10 C30 10 15 25 15 40 C15 55 25 65 30 70 C35 75 45 80 50 80 C55 80 65 75 70 70 C75 65 85 55 85 40 C85 25 70 10 50 10 z M25 40 L5 60 M75 40 L95 60'/%3E%3C/svg%3E");
   mask-size: cover;
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 2h8v2h-8zM3 4h10v7h-2v3h-6v-3h-2z'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 10 C30 10 15 25 15 40 C15 55 25 65 30 70 C35 75 45 80 50 80 C55 80 65 75 70 70 C75 65 85 55 85 40 C85 25 70 10 50 10 z M25 40 L5 60 M75 40 L95 60'/%3E%3C/svg%3E");
   -webkit-mask-size: cover;
   cursor: pointer;
   image-rendering: pixelated;
