@@ -1,4 +1,4 @@
-/* Modern Minimalist Style with Light/Dark Mode Support */
+/* General Body Styling */
 :root {
   /* Light Mode Variables (default) */
   --bg-color: #ffffff;
@@ -552,10 +552,11 @@ footer {
 .minecraft-player {
   width: 64px;
   height: 64px;
-  background-image: url('https://www.minecraft.net/content/dam/games/minecraft/game-characters/MC-Steve-1920x1080.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom;
+  background-color: var(--accent-color);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 2h8v2h-8zM3 4h10v7h-2v3h-6v-3h-2z'/%3E%3C/svg%3E");
+  mask-size: cover;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 2h8v2h-8zM3 4h10v7h-2v3h-6v-3h-2z'/%3E%3C/svg%3E");
+  -webkit-mask-size: cover;
   cursor: pointer;
   image-rendering: pixelated;
   transform-origin: bottom center;
@@ -568,13 +569,14 @@ footer {
 
 .minecraft-message {
   position: absolute;
-  top: -30px;
+  top: -40px;
   right: 0;
-  background-color: white;
-  color: black;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 2px solid var(--accent-color);
   padding: 5px 10px;
   border-radius: 4px;
-  font-family: 'Minecraft', 'Courier New', monospace;
+  font-family: 'Courier New', monospace;
   font-size: 14px;
   text-transform: lowercase;
   opacity: 0;
@@ -582,6 +584,20 @@ footer {
   transition: opacity 0.3s ease, transform 0.3s ease;
   white-space: nowrap;
   pointer-events: none;
+  min-width: 60px;
+  text-align: center;
+}
+
+.minecraft-message:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: 24px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--accent-color);
 }
 
 .minecraft-player:hover + .minecraft-message,

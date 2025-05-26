@@ -34,11 +34,18 @@ document.addEventListener('DOMContentLoaded', function() {
   // Check initial position
   checkScrollPosition();
   
-  // Add sound effect on click (optional)
+  // Add animation on click
   minecraftPlayer.addEventListener('click', function() {
     playerMessage.classList.add('message-animate');
+    // Play sound if available
+    const sound = document.getElementById('minecraft-sound');
+    if (sound) {
+      sound.currentTime = 0;
+      sound.play().catch(e => console.log('Audio play failed:', e));
+    }
+    
     setTimeout(() => {
       playerMessage.classList.remove('message-animate');
-    }, 500);
+    }, 1500);
   });
 });
