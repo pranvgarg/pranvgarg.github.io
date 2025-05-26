@@ -1,0 +1,364 @@
+/* Modern Minimalist Style with Light/Dark Mode Support */
+:root {
+  /* Light Mode Variables (default) */
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --accent-color: #007acc;
+  --secondary-bg: #f5f5f5;
+  --card-bg: #ffffff;
+  --border-color: #e0e0e0;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  --highlight-bg: #ffffd0;
+}
+
+[data-theme="dark"] {
+  /* Dark Mode Variables */
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --accent-color: #4dabf7;
+  --secondary-bg: #1e1e1e;
+  --card-bg: #242424;
+  --border-color: #333333;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --highlight-bg: #2d2d1a;
+}
+
+/* General Body Styling */
+body {
+  font-family: 'Inter', 'SF Pro Display', 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  padding: 20px 0;
+  position: relative;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+  border-radius: 34px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: var(--accent-color);
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(30px);
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+a:hover:after {
+  width: 100%;
+}
+
+/* Icons and Images */
+.icon-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  vertical-align: middle;
+  transition: transform 0.3s ease-in-out;
+  filter: brightness(1);
+}
+
+[data-theme="dark"] .icon-img {
+  filter: brightness(1.75);
+}
+
+.icon-img:hover {
+  transform: scale(1.1);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: filter 0.3s ease;
+}
+
+[data-theme="dark"] img {
+  filter: brightness(0.9);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  color: var(--text-color);
+  font-weight: 600;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+p {
+  margin-bottom: 1.2em;
+  line-height: 1.6;
+}
+
+.name-title {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.section-heading {
+  display: block;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 30px 0 15px;
+  color: var(--text-color);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-heading:after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-color);
+}
+
+/* Tables and Layout */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: var(--card-bg);
+  transition: background-color 0.3s ease;
+}
+
+td {
+  vertical-align: top;
+  padding: 15px;
+}
+
+/* Project Cards */
+.project-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-title {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Highlighted Projects */
+tr[bgcolor="#ffffd0"] {
+  background-color: var(--highlight-bg) !important;
+  transition: background-color 0.3s ease;
+}
+
+.highlight {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* Dividers */
+hr {
+  border: 0;
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 20px 0;
+  transition: background-color 0.3s ease;
+}
+
+/* Footer */
+footer {
+  padding: 30px 0;
+  margin-top: 50px;
+  text-align: center;
+  color: var(--text-color);
+  opacity: 0.7;
+  font-size: 0.85em;
+  border-top: 1px solid var(--border-color);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Accessibility - Focus States */
+:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Skip to content for accessibility */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-to-content:focus {
+  left: 0;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  background: var(--accent-color);
+  color: white;
+  z-index: 1000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  td {
+    display: block;
+    width: 100% !important;
+    text-align: left;
+  }
+
+  .name-title {
+    font-size: 2em;
+  }
+
+  .theme-toggle {
+    top: 15px;
+    right: 15px;
+  }
+
+  .toggle-switch {
+    width: 50px;
+    height: 25px;
+  }
+
+  .toggle-slider:before {
+    height: 17px;
+    width: 17px;
+  }
+
+  input:checked + .toggle-slider:before {
+    transform: translateX(25px);
+  }
+}
+
+/* High Contrast Mode (For Accessibility) */
+@media (prefers-contrast: more) {
+  :root {
+    --text-color: #000000;
+    --bg-color: #ffffff;
+    --accent-color: #0057b7;
+  }
+
+  [data-theme="dark"] {
+    --text-color: #ffffff;
+    --bg-color: #000000;
+    --accent-color: #60a5fa;
+  }
+
+  a, .highlight {
+    text-decoration: underline;
+  }
+}
