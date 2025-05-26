@@ -20,15 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (e.target.checked) {
       document.documentElement.setAttribute('data-theme', 'dark');
       localStorage.setItem('theme', 'dark');
-      
-      // Announce theme change for screen readers
-      document.getElementById('theme-announcement').textContent = 'Dark mode enabled';
     } else {
       document.documentElement.setAttribute('data-theme', 'light');
       localStorage.setItem('theme', 'light');
-      
-      // Announce theme change for screen readers
-      document.getElementById('theme-announcement').textContent = 'Light mode enabled';
     }
   });
 });
