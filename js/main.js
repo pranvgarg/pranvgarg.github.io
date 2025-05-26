@@ -10,8 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeEmailScrambler();
   createProjectCards();
   initializeMinecraftPlayer();
-  initializeAboutMe();
-  initializeWorkExperience();
   
   // Initialize smooth scrolling for anchor links
   initializeSmoothScrolling();
