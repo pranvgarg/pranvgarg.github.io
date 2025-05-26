@@ -238,6 +238,27 @@ a:hover:after {
   filter: brightness(1);
 }
 
+/* Social links container */
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* Social icons specific styles */
+.social-links .icon-img {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+}
+
+.social-links .cv-icon {
+  width: 32px;
+  height: 32px;
+}
+
 [data-theme="dark"] .icon-img {
   filter: brightness(1.75);
 }
@@ -494,6 +515,34 @@ footer {
   #theme-toggle {
     width: 40px;
     height: 40px;
+  }
+  
+  /* Adjusted social icons for mobile */
+  .social-links {
+    gap: 10px;
+  }
+  
+  .social-links .icon-img {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .social-links .cv-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .social-links .icon-img {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .social-links .cv-icon {
+    width: 24px;
+    height: 24px;
   }
 }
 
