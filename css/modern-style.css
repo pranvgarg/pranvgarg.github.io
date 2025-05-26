@@ -53,7 +53,7 @@ header {
   transition: background 0.3s ease, border-color 0.3s ease;
 }
 
-/* Theme Toggle */
+/* Theme Toggle - New Animated Design */
 .theme-toggle {
   position: absolute;
   top: 20px;
@@ -61,49 +61,113 @@ header {
   z-index: 100;
 }
 
-.toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 30px;
-}
-
-.toggle-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.toggle-slider {
-  position: absolute;
+#theme-toggle {
+  background: transparent;
+  border: none;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.3s;
-  border-radius: 34px;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: transform 0.5s ease;
 }
 
-.toggle-slider:before {
+#theme-toggle:hover {
+  transform: rotate(15deg);
+}
+
+.theme-icon {
   position: absolute;
-  content: "";
-  height: 22px;
-  width: 22px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: 0.3s;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+/* Sun Icon */
+.sun-icon {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-theme="dark"] .sun-icon {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.sun-icon .center {
+  width: 18px;
+  height: 18px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  position: relative;
+}
+
+.ray {
+  position: absolute;
+  background-color: var(--accent-color);
+  width: 2px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.ray1 { transform: rotate(0deg) translateY(-14px); }
+.ray2 { transform: rotate(90deg) translateY(-14px); }
+.ray3 { transform: rotate(45deg) translateY(-14px); }
+.ray4 { transform: rotate(-45deg) translateY(-14px); }
+
+/* Moon Icon */
+.moon-icon {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+[data-theme="dark"] .moon-icon {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.moon {
+  width: 18px;
+  height: 18px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.crater {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
 }
 
-input:checked + .toggle-slider {
-  background-color: var(--accent-color);
+.crater1 {
+  width: 5px;
+  height: 5px;
+  top: 3px;
+  left: 3px;
 }
 
-input:checked + .toggle-slider:before {
-  transform: translateX(30px);
+.crater2 {
+  width: 4px;
+  height: 4px;
+  top: 8px;
+  right: 4px;
+}
+
+.crater3 {
+  width: 3px;
+  height: 3px;
+  bottom: 3px;
+  left: 7px;
 }
 
 /* Links */
@@ -234,10 +298,20 @@ td {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+.project-image-container {
+  height: 200px;
+  overflow: hidden;
+}
+
 .project-image {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
 }
 
 .project-content {
@@ -250,10 +324,22 @@ td {
   margin-bottom: 10px;
 }
 
+.project-title a {
+  color: var(--text-color);
+}
+
+.project-title a:hover {
+  color: var(--accent-color);
+}
+
 /* Highlighted Projects */
 tr[bgcolor="#ffffd0"] {
   background-color: var(--highlight-bg) !important;
   transition: background-color 0.3s ease;
+}
+
+.highlighted {
+  border-left: 3px solid var(--accent-color);
 }
 
 .highlight {
@@ -275,11 +361,29 @@ footer {
   padding: 30px 0;
   margin-top: 50px;
   text-align: center;
-  color: #E0E0E0;
+  color: var(--text-color);
   font-size: 0.85em;
   border-top: 1px solid var(--border-color);
   transition: color 0.3s ease, border-color 0.3s ease;
   background: var(--bg-gradient);
+}
+
+/* Profile section layout */
+.profile-section {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.profile-content {
+  flex: 2;
+}
+
+.profile-image {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 /* Accessibility - Focus States */
@@ -308,6 +412,19 @@ footer {
   z-index: 1000;
 }
 
+/* For screen readers only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   body {
@@ -318,10 +435,12 @@ footer {
     padding: 0 15px;
   }
 
-  td {
-    display: block;
-    width: 100% !important;
-    text-align: left;
+  .profile-section {
+    flex-direction: column-reverse;
+  }
+
+  .profile-image {
+    margin-bottom: 20px;
   }
 
   .name-title {
@@ -333,18 +452,9 @@ footer {
     right: 15px;
   }
 
-  .toggle-switch {
-    width: 50px;
-    height: 25px;
-  }
-
-  .toggle-slider:before {
-    height: 17px;
-    width: 17px;
-  }
-
-  input:checked + .toggle-slider:before {
-    transform: translateX(25px);
+  #theme-toggle {
+    width: 40px;
+    height: 40px;
   }
 }
 
