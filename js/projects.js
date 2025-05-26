@@ -25,13 +25,29 @@ const projects = [
       "Pooling layers proved effective for dimensionality reduction, and fully connected layers were critical for classification."
     ],
     improvements: "Refining the model by separately training visually similar classes and exploring advanced architectures could further enhance accuracy while maintaining generalization."
+  },
+  {
+    highlighted: true,
+    image: "images/project/icu_mortality.png",
+    imageAlt: "ICU Mortality Prediction",
+    title: "Predicting ICU Mortality Using Machine Learning: A Global Perspective",
+    link: "https://github.com/pranvgarg/Predicting-ICU-Mortality-Using-Machine-Learning",
+    learnings: "This project gave me valuable experience in developing machine learning models for healthcare applications. I deepened my understanding of how to handle imbalanced datasets using techniques like SMOTENC, how to evaluate models with various metrics (e.g., accuracy, recall, ROC AUC), and how to apply dimensionality reduction (PCA) to streamline high-dimensional data. It also reinforced the importance of global data and model generalization across diverse healthcare systems.",
+    insights: [
+      "The project demonstrated the power of ensemble methods (like Random Forest and XGBoost) and neural networks in improving model performance.",
+      "It was interesting to observe how the MLP model outperformed traditional methods like APACHE in terms of recall, which is crucial for minimizing false negatives in critical healthcare predictions."
+    ],
+    additionalLink: "https://medium.com/@pg.garg.pranav/predicting-icu-mortality-using-machine-learning-a-global-perspective-dc18d009afb0"
   }
 ];
 
 // Function to create project cards
 function createProjectCards() {
-  const container = document.getElementById('projects-container');
+  const container = document.querySelector('.project-list');
   if (!container) return; // Guard clause if container doesn't exist
+  
+  // Clear any existing content
+  container.innerHTML = '';
 
   projects.forEach(project => {
     // Create main card div
@@ -41,58 +57,85 @@ function createProjectCards() {
       card.classList.add('highlighted');
     }
     
+    // Create image container
+    const imgContainer = document.createElement('div');
+    imgContainer.className = 'project-image-container';
+    
     // Create and set image
     const img = document.createElement('img');
     img.className = 'project-image';
     img.src = project.image;
     img.alt = project.imageAlt;
-    card.appendChild(img);
+    imgContainer.appendChild(img);
+    card.appendChild(imgContainer);
+    
+    // Create content container
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'project-content';
     
     // Create and set title
-    const titleDiv = document.createElement('div');
-    titleDiv.className = 'project-title';
+    const titleEl = document.createElement('h3');
+    titleEl.className = 'project-title';
     const titleLink = document.createElement('a');
     titleLink.href = project.link;
+    titleLink.target = '_blank';
     titleLink.textContent = project.title;
-    titleDiv.appendChild(titleLink);
-    card.appendChild(titleDiv);
+    titleEl.appendChild(titleLink);
+    contentDiv.appendChild(titleEl);
     
     // Create and set learnings
     const learningsP = document.createElement('p');
-    learningsP.className = 'project-learnings';
-    learningsP.innerHTML = project.learnings;
-    card.appendChild(learningsP);
+    const learnStrong = document.createElement('strong');
+    learnStrong.textContent = 'What I Learned: ';
+    learningsP.appendChild(learnStrong);
+    // Use a temporary div to convert HTML string to nodes
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = project.learnings;
+    // Append all child nodes from the temp div
+    while (tempDiv.firstChild) {
+      learningsP.appendChild(tempDiv.firstChild);
+    }
+    contentDiv.appendChild(learningsP);
     
     // Create and set insights
-    const insightsList = document.createElement('ul');
-    insightsList.className = 'project-insights';
-    project.insights.forEach(insight => {
-      const li = document.createElement('li');
-      li.textContent = insight;
-      insightsList.appendChild(li);
-    });
-    card.appendChild(insightsList);
+    if (project.insights && project.insights.length > 0) {
+      const insightsP = document.createElement('p');
+      const insightStrong = document.createElement('strong');
+      insightStrong.textContent = 'Key Insights:';
+      insightsP.appendChild(insightStrong);
+      contentDiv.appendChild(insightsP);
+      
+      const insightsList = document.createElement('ul');
+      project.insights.forEach(insight => {
+        const li = document.createElement('li');
+        li.textContent = insight;
+        insightsList.appendChild(li);
+      });
+      contentDiv.appendChild(insightsList);
+    }
     
     // Create and set improvements if they exist
     if (project.improvements) {
       const improvementsP = document.createElement('p');
-      improvementsP.className = 'project-improvements';
-      improvementsP.textContent = project.improvements;
-      card.appendChild(improvementsP);
+      const improvementsStrong = document.createElement('strong');
+      improvementsStrong.textContent = 'Future Improvements: ';
+      improvementsP.appendChild(improvementsStrong);
+      improvementsP.appendChild(document.createTextNode(project.improvements));
+      contentDiv.appendChild(improvementsP);
     }
     
     // Create and set additional link if it exists
     if (project.additionalLink) {
       const linkP = document.createElement('p');
-      linkP.className = 'project-link';
       const link = document.createElement('a');
       link.href = project.additionalLink;
       link.target = '_blank';
-      link.textContent = 'Read more';
+      link.textContent = 'Read more on Medium';
       linkP.appendChild(link);
-      card.appendChild(linkP);
+      contentDiv.appendChild(linkP);
     }
     
+    card.appendChild(contentDiv);
     container.appendChild(card);
   });
 }
