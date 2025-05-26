@@ -31,54 +31,69 @@ const projects = [
 // Function to create project cards
 function createProjectCards() {
   const container = document.getElementById('projects-container');
-  const template = document.getElementById('project-template');
+  if (!container) return; // Guard clause if container doesn't exist
 
   projects.forEach(project => {
-    const clone = template.content.cloneNode(true);
-    
-    // Add highlighted class if specified
+    // Create main card div
+    const card = document.createElement('div');
+    card.className = 'project-card';
     if (project.highlighted) {
-      clone.querySelector('.project-card').classList.add('highlighted');
+      card.classList.add('highlighted');
     }
     
-    // Set image
-    const img = clone.querySelector('.project-image');
+    // Create and set image
+    const img = document.createElement('img');
+    img.className = 'project-image';
     img.src = project.image;
     img.alt = project.imageAlt;
+    card.appendChild(img);
     
-    // Set title and link
-    const link = clone.querySelector('.project-title a');
-    link.href = project.link;
-    link.textContent = project.title;
+    // Create and set title
+    const titleDiv = document.createElement('div');
+    titleDiv.className = 'project-title';
+    const titleLink = document.createElement('a');
+    titleLink.href = project.link;
+    titleLink.textContent = project.title;
+    titleDiv.appendChild(titleLink);
+    card.appendChild(titleDiv);
     
-    // Set learnings
-    clone.querySelector('.project-learnings').innerHTML = project.learnings;
+    // Create and set learnings
+    const learningsP = document.createElement('p');
+    learningsP.className = 'project-learnings';
+    learningsP.innerHTML = project.learnings;
+    card.appendChild(learningsP);
     
-    // Set insights
-    const insightsList = clone.querySelector('.project-insights');
+    // Create and set insights
+    const insightsList = document.createElement('ul');
+    insightsList.className = 'project-insights';
     project.insights.forEach(insight => {
       const li = document.createElement('li');
       li.textContent = insight;
       insightsList.appendChild(li);
     });
+    card.appendChild(insightsList);
     
-    // Set improvements if they exist
-    const improvementsP = clone.querySelector('.project-improvements');
+    // Create and set improvements if they exist
     if (project.improvements) {
+      const improvementsP = document.createElement('p');
+      improvementsP.className = 'project-improvements';
       improvementsP.textContent = project.improvements;
-    } else {
-      improvementsP.style.display = 'none';
+      card.appendChild(improvementsP);
     }
     
-    // Add additional link if it exists
-    const linkP = clone.querySelector('.project-link');
+    // Create and set additional link if it exists
     if (project.additionalLink) {
-      linkP.innerHTML = `<a href="${project.additionalLink}" target="_blank">Read more</a>`;
-    } else {
-      linkP.style.display = 'none';
+      const linkP = document.createElement('p');
+      linkP.className = 'project-link';
+      const link = document.createElement('a');
+      link.href = project.additionalLink;
+      link.target = '_blank';
+      link.textContent = 'Read more';
+      linkP.appendChild(link);
+      card.appendChild(linkP);
     }
     
-    container.appendChild(clone);
+    container.appendChild(card);
   });
 }
 
