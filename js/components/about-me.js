@@ -21,7 +21,7 @@ const aboutMeConfig = {
     </p>
   `,
   profileImage: {
-    src: "images/profile_photo.jpg",
+    src: "/images/profile_photo.jpg", // Added leading slash to ensure it's relative to root
     alt: "Pranav Garg",
     width: "90%"
   }
@@ -48,6 +48,12 @@ function initializeAboutMe() {
   img.src = aboutMeConfig.profileImage.src;
   img.alt = aboutMeConfig.profileImage.alt;
   img.width = aboutMeConfig.profileImage.width;
+  img.onerror = function() {
+    console.error('Error loading profile image:', this.src);
+    // Add fallback image or placeholder
+    this.src = 'https://via.placeholder.com/300x400?text=Pranav+Garg';
+    this.onerror = null; // Prevent infinite error loop
+  };
   profileImage.appendChild(img);
   
   // Assemble the profile section
