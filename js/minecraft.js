@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   const playerMessage = document.createElement('div');
   playerMessage.className = 'minecraft-message';
-  playerMessage.textContent = 'down';
+  playerMessage.textContent = 'longhorn';
   
   minecraftContainer.appendChild(minecraftPlayer);
   minecraftContainer.appendChild(playerMessage);
