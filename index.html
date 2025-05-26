@@ -21,6 +21,33 @@
   
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js"></script>
+  
+  <style>
+    .email-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 600px;
+      background: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+    
+    .email-address {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: var(--accent-color);
+    }
+    
+    .name {
+      font-size: 1.5em;
+      font-weight: 600;
+      color: var(--text-color);
+    }
+  </style>
 </head>
 
 <body>
@@ -42,12 +69,15 @@
       
       <h1 class="name-title">Pranav Garg</h1>
       
-      <p>
-        <b>Email</b>:
-        <span id="email" style="display:inline;">
-          <a href="#" onclick="emailScramble.initAnimatedBubbleSort();return false;">pranavgarg71@gmail.com</a>
-        </span>
-      </p>
+      <!-- Centered Email Layout -->
+      <div class="email-container">
+        <div class="email-address">
+          <span id="email">
+            <a href="#" onclick="emailScramble.initAnimatedBubbleSort();return false;">m1gaila@agag7rnvr.pmco</a>
+          </span>
+        </div>
+        <div class="name">pranav garg</div>
+      </div>
 
       <div class="social-links">
         <a href="https://pranvgarg.github.io/files/resume_ds.pdf" target="_blank" aria-label="Resume">
@@ -216,5 +246,13 @@
   <script src="js/hidebib.js"></script>
   <script src="js/theme-switcher.js"></script>
   <script src="js/inline_scripts.js"></script>
-</body>
-</html>
+  
+  <script>
+    // Update the scrambled email with the new text
+    emailScramble = new scrambledString(
+      document.getElementById('email'),
+      'emailScramble',
+      'mrago1ina@.agag7rnvpcm', // Scrambled version of m1gaila@agag7rnvr.pmco
+      [14, 1, 2, 6, 20, 11, 16, 3, 4, 12, 18, 8, 9, 7, 0, 19, 15, 13, 5, 10, 17, 21]
+    );
+  </script>
