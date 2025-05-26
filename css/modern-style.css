@@ -392,6 +392,7 @@ td {
 .project-image-container {
   height: 200px;
   overflow: hidden;
+  position: relative;
 }
 
 .project-image {
@@ -579,6 +580,42 @@ footer {
     width: 28px;
     height: 28px;
   }
+  
+  /* Improved project cards for mobile */
+  .project-card {
+    margin-bottom: 25px;
+  }
+  
+  .project-image-container {
+    height: 180px;
+  }
+  
+  .project-content {
+    padding: 15px;
+  }
+  
+  .project-title {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+  }
+  
+  .project-content p {
+    margin-bottom: 0.8em;
+    font-size: 0.95em;
+    line-height: 1.5;
+  }
+  
+  .project-content ul {
+    padding-left: 18px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .project-content li {
+    margin-bottom: 6px;
+    font-size: 0.9em;
+    line-height: 1.4;
+  }
 }
 
 /* Small mobile devices */
@@ -591,6 +628,35 @@ footer {
   .social-links .cv-icon {
     width: 24px;
     height: 24px;
+  }
+  
+  /* Further optimizations for very small screens */
+  .project-image-container {
+    height: 160px;
+  }
+  
+  .project-content {
+    padding: 12px;
+  }
+  
+  .project-content strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .project-content ul {
+    padding-left: 16px;
+  }
+  
+  /* Make project cards more compact on small screens */
+  .project-card {
+    margin-bottom: 20px;
+  }
+  
+  /* Better handle long text */
+  .project-content li {
+    text-align: left;
+    word-break: break-word;
   }
 }
 

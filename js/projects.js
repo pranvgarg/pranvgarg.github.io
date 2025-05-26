@@ -100,6 +100,7 @@ function createProjectCards() {
     img.className = 'project-image';
     img.src = project.image;
     img.alt = project.imageAlt;
+    img.loading = "lazy"; // Add lazy loading for better performance
     imgContainer.appendChild(img);
     card.appendChild(imgContainer);
     
