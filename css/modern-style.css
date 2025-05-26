@@ -228,6 +228,20 @@ a:hover:after {
   width: 100%;
 }
 
+/* Email link styling - adapts to theme */
+#email a {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+#email a:hover {
+  color: var(--accent-color);
+}
+
+#email a:after {
+  background-color: var(--accent-color);
+}
+
 /* Icons and Images */
 .icon-img {
   width: 24px;
@@ -390,6 +404,15 @@ td {
 .project-content li {
   color: var(--text-color);
   transition: color 0.3s ease;
+}
+
+/* Project key insights color fix */
+.project-content strong,
+.project-content [color="646464"],
+font[color="646464"] {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+  opacity: 0.8;
 }
 
 /* Highlighted Projects */
