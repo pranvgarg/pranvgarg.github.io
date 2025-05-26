@@ -1,0 +1,77 @@
+/* Layout */
+
+/* General Body Styling */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-gradient);
+  transition: background 0.3s ease;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Main Content */
+main {
+  min-height: 60vh;
+}
+
+/* Dividers */
+hr {
+  border: 0;
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 20px 0;
+  transition: background-color 0.3s ease;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: var(--card-bg);
+  transition: background-color 0.3s ease;
+}
+
+td {
+  vertical-align: top;
+  padding: 15px;
+}
+
+/* Profile section layout */
+.profile-section {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.profile-content {
+  flex: 2;
+}
+
+.profile-image {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Highlighted table rows */
+tr[bgcolor="#ffffd0"] {
+  background-color: var(--highlight-bg) !important;
+  transition: background-color 0.3s ease;
+}
+
+/* Social links container */
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}

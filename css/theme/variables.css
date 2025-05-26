@@ -1,0 +1,45 @@
+/* Modern Minimalist Style with Light/Dark Mode Support */
+:root {
+  /* Light Mode Variables (default) */
+  --bg-color: #ffffff;
+  --bg-gradient: linear-gradient(135deg, #ffffff, #fff5e6);
+  --text-color: #333333;
+  --accent-color: #ff8c00;
+  --secondary-bg: #f5f5f5;
+  --card-bg: #ffffff;
+  --border-color: #e0e0e0;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  --highlight-bg: #fff5e6;
+}
+
+[data-theme="dark"] {
+  /* Dark Mode Variables */
+  --bg-color: #121212;
+  --bg-gradient: linear-gradient(135deg, #121212, #331400);
+  --text-color: #FFFFFF;
+  --accent-color: #ff8c00;
+  --secondary-bg: #1e1e1e;
+  --card-bg: #242424;
+  --border-color: #333333;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --highlight-bg: #2d2d1a;
+}
+
+/* High Contrast Mode (For Accessibility) */
+@media (prefers-contrast: more) {
+  :root {
+    --text-color: #000000;
+    --bg-color: #ffffff;
+    --accent-color: #0057b7;
+  }
+
+  [data-theme="dark"] {
+    --text-color: #ffffff;
+    --bg-color: #000000;
+    --accent-color: #60a5fa;
+  }
+
+  a, .highlight {
+    text-decoration: underline;
+  }
+}

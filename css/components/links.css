@@ -1,0 +1,62 @@
+/* Links */
+
+a {
+  text-decoration: none;
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+a:hover:after {
+  width: 100%;
+}
+
+/* Fix for inconsistent link styling */
+.profile-content a,
+.about p a,
+.project-content a {
+  text-decoration: none;
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.profile-content a:hover,
+.about p a:hover,
+.project-content a:hover {
+  color: var(--accent-color);
+}
+
+.profile-content a:after,
+.about p a:after,
+.project-content a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.profile-content a:hover:after,
+.about p a:hover:after,
+.project-content a:hover:after {
+  width: 100%;
+}

@@ -1,0 +1,91 @@
+/* Typography */
+
+/* Base Font Styles */
+body {
+  font-family: 'Inter', 'SF Pro Display', 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  color: var(--text-color);
+  font-weight: 700;
+  line-height: 1.3;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+  transition: color 0.3s ease;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 1.2em;
+  line-height: 1.6;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+/* Title and Headings */
+.name-title {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.section-heading {
+  display: block;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 30px 0 15px;
+  color: var(--text-color);
+  position: relative;
+  padding-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.section-heading:after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: background-color 0.3s ease;
+}
+
+/* Highlighted content */
+.highlight {
+  color: var(--accent-color);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* Legacy support for font tags */
+font[size="7"] {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+/* Project content text colors */
+.project-content p, 
+.project-content ul, 
+.project-content li {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+/* Project key insights color fix */
+.project-content strong,
+.project-content [color="646464"],
+font[color="646464"] {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+  opacity: 0.8;
+}

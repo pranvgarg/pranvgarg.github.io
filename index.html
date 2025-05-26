@@ -13,11 +13,8 @@
   <!-- Inter Font for modern minimalist design -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="css/modern-style.css">
-  
-  <!-- Original style reference kept for compatibility -->
-  <link rel="stylesheet" href="css/inline_style.css">
+  <!-- Custom Styles - Using modular CSS files imported via main CSS -->
+  <link rel="stylesheet" href="css/styles.css">
   
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js"></script>
@@ -160,12 +157,12 @@
     <source src="https://www.myinstants.com/media/sounds/minecraft-click.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- Custom Scripts -->
-  <script src="js/scramble.js"></script>
-  <script src="js/hidebib.js"></script>
-  <script src="js/theme-switcher.js"></script>
-  <script src="js/projects.js"></script>
-  <script src="js/inline_scripts.js"></script>
-  <script src="js/minecraft.js"></script>
+  <!-- Modular JavaScript -->
+  <script src="js/utils/bibliography.js"></script>
+  <script src="js/components/email-scrambler.js"></script>
+  <script src="js/components/theme-switcher.js"></script>
+  <script src="js/components/project-cards.js"></script>
+  <script src="js/components/minecraft-player.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

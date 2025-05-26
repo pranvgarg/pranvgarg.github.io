@@ -1,0 +1,18 @@
+/* Buttons and interactive elements */
+
+button,
+a.button-link {
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+a.button-link:hover {
+  background-color: #005f99;
+}
