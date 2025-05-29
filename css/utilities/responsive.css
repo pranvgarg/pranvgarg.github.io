@@ -47,6 +47,17 @@
     height: 28px;
   }
   
+  /* Tech Stack Badges for mobile */
+  .tech-stack {
+    gap: 6px;
+    margin: 10px 0;
+  }
+  
+  .tech-badge {
+    font-size: 0.7em;
+    padding: 2px 6px;
+  }
+  
   /* Improved project cards for mobile */
   .project-card {
     margin-bottom: 25px;
@@ -83,6 +94,12 @@
     line-height: 1.4;
   }
   
+  /* Read More Button on mobile */
+  .read-more-btn {
+    padding: 5px 12px;
+    font-size: 0.85em;
+  }
+  
   /* Minecraft adjustments for mobile */
   .minecraft-container {
     right: 10px;
@@ -109,6 +126,17 @@
   .social-links .cv-icon {
     width: 24px;
     height: 24px;
+  }
+  
+  /* Tech Stack Badges for small mobile */
+  .tech-stack {
+    gap: 4px;
+    margin: 8px 0;
+  }
+  
+  .tech-badge {
+    font-size: 0.65em;
+    padding: 2px 5px;
   }
   
   /* Further optimizations for very small screens */
