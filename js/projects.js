@@ -7,6 +7,26 @@
 const projects = [
   {
     highlighted: true,
+    image: "images/project/investment-analytics.png",
+    imageAlt: "Investment Analytics Pipeline Architecture",
+    title: "Production-Grade Investment Analytics Pipeline",
+    link: "https://github.com/pranvgarg/investment-analytics-pipeline",
+    techStack: ["Apache Airflow", "dbt", "PostgreSQL", "Streamlit", "Docker", "Great Expectations", "Polygon.io", "Alpaca API"],
+    learnings: "Developed a comprehensive, production-ready investment portfolio tracking system that showcases modern data engineering best practices. Gained hands-on experience with real-time data ingestion, robust orchestration, data quality validation, and financial analytics at scale.",
+    insights: [
+      "Architected a complete data pipeline with real-time data ingestion from professional financial APIs (Polygon.io, Alpaca) and robust orchestration using Apache Airflow with Astro Runtime.",
+      "Implemented advanced financial metrics including Time-Weighted Returns, Sharpe Ratio, and Alpha calculations using dbt for data transformation and PostgreSQL for optimized storage.",
+      "Created interactive Streamlit dashboards featuring real-time portfolio visualization, performance metrics, and risk analysis with benchmark comparisons.",
+      "Integrated comprehensive data quality validation with Great Expectations, implementing checks for data freshness, completeness, accuracy, and business rule validation.",
+      "Containerized the entire application stack using Docker Compose for easy deployment and scalability, including PostgreSQL, Airflow, and Streamlit services.",
+      "Implemented monitoring and alerting with Slack integration for pipeline health, data quality issues, and critical failures.",
+      "Designed a partitioned database schema for optimal performance with time-series financial data, including optimized indexes for common query patterns."
+    ],
+    fullDescription: "The Investment Analytics Pipeline is a sophisticated, production-grade solution for tracking and analyzing investment portfolios. The system features a microservices architecture with clear separation of concerns between data ingestion, processing, storage, and presentation layers. The pipeline begins with real-time data ingestion from professional financial APIs (Polygon.io and Alpaca), processes the data through a robust ETL pipeline orchestrated by Apache Airflow, and stores it in an optimized PostgreSQL database with time-series partitioning. The transformation layer, built with dbt, handles complex financial calculations including Time-Weighted Returns, Sharpe Ratio, and Alpha calculations. Data quality is ensured through comprehensive validation with Great Expectations, checking for data freshness, completeness, and business rule compliance. The interactive Streamlit dashboard provides real-time portfolio visualization, performance metrics, and risk analysis. The entire system is containerized with Docker Compose for easy deployment and scalability, and includes monitoring and alerting capabilities. The project demonstrates industry best practices in data engineering, including infrastructure as code, automated testing, and continuous monitoring.",
+    additionalLink: "https://github.com/pranvgarg/investment-analytics-pipeline"
+  },
+  {
+    highlighted: true,
     image: "images/project/connect4.jpeg",
     imageAlt: "Connect 4 AI Game",
     title: "AI-Powered Connect 4: CNN & Transformer-Based Bot",
