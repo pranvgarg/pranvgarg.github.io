@@ -27,6 +27,25 @@ const projects = [
   },
   {
     highlighted: true,
+    image: "images/project/newspaper-vendor.png",
+    imageAlt: "Newspaper Vendor Model Optimization Results",
+    title: "Extended Newsvendor Model with Price Optimization",
+    link: "https://github.com/pranvgarg/Newspaper-Vendor-Model",
+    techStack: ["Python", "Pandas", "NumPy", "SciPy", "Matplotlib", "Linear Programming", "Quadratic Programming"],
+    learnings: "Developed an advanced newsvendor model that extends the traditional approach by incorporating price optimization and real-world cost factors. Gained expertise in mathematical optimization techniques and their application to inventory and pricing problems.",
+    insights: [
+      "Extended the classic newsvendor model to simultaneously optimize both production quantity and pricing decisions under demand uncertainty.",
+      "Implemented Quadratically Constrained Programming (QCP) to solve the optimization problem, considering price sensitivity and additional cost factors.",
+      "Achieved 5-10% higher profits compared to the standard newsvendor model by incorporating price elasticity of demand.",
+      "Conducted sensitivity analysis using bootstrapping to evaluate model robustness and identify optimal parameters.",
+      "Visualized optimization results and price-demand relationships to provide actionable business insights.",
+      "Identified optimal price point at approximately $0.95 and production quantity at 535 units for maximum profitability."
+    ],
+    fullDescription: "The Extended Newsvendor Model project focuses on solving a classic operations research problem with modern optimization techniques. The traditional newsvendor model determines the optimal inventory level for perishable goods under demand uncertainty, but often ignores pricing decisions. This project extends the model by incorporating price optimization, allowing for simultaneous determination of both optimal price and order quantity. The solution uses Quadratically Constrained Programming (QCP) to handle the non-linear relationship between price and demand, while considering real-world costs such as rush ordering and disposal fees. The implementation includes a comprehensive sensitivity analysis using bootstrapping to assess the robustness of the solution under different demand scenarios. The model was validated against historical data and demonstrated significant profit improvements over traditional approaches. The project showcases the power of mathematical optimization in business decision-making, particularly in inventory management and pricing strategy.",
+    additionalLink: "https://github.com/pranvgarg/Newspaper-Vendor-Model"
+  },
+  {
+    highlighted: true,
     image: "images/project/connect4.jpeg",
     imageAlt: "Connect 4 AI Game",
     title: "AI-Powered Connect 4: CNN & Transformer-Based Bot",
