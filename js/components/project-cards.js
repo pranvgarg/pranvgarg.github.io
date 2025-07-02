@@ -7,6 +7,45 @@
 const projects = [
   {
     highlighted: true,
+    image: "images/project/investment-analytics.png",
+    imageAlt: "Investment Analytics Pipeline Architecture",
+    title: "Production-Grade Investment Analytics Pipeline",
+    link: "https://github.com/pranvgarg/investment-analytics-pipeline",
+    techStack: ["Apache Airflow", "dbt", "PostgreSQL", "Streamlit", "Docker", "Great Expectations", "Polygon.io", "Alpaca API"],
+    learnings: "Developed a comprehensive, production-ready investment portfolio tracking system that showcases modern data engineering best practices. Gained hands-on experience with real-time data ingestion, robust orchestration, data quality validation, and financial analytics at scale.",
+    insights: [
+      "Architected a complete data pipeline with real-time data ingestion from professional financial APIs (Polygon.io, Alpaca) and robust orchestration using Apache Airflow with Astro Runtime.",
+      "Implemented advanced financial metrics including Time-Weighted Returns, Sharpe Ratio, and Alpha calculations using dbt for data transformation and PostgreSQL for optimized storage.",
+      "Created interactive Streamlit dashboards featuring real-time portfolio visualization, performance metrics, and risk analysis with benchmark comparisons.",
+      "Integrated comprehensive data quality validation with Great Expectations, implementing checks for data freshness, completeness, accuracy, and business rule validation.",
+      "Containerized the entire application stack using Docker Compose for easy deployment and scalability, including PostgreSQL, Airflow, and Streamlit services.",
+      "Implemented monitoring and alerting with Slack integration for pipeline health, data quality issues, and critical failures.",
+      "Designed a partitioned database schema for optimal performance with time-series financial data, including optimized indexes for common query patterns."
+    ],
+    fullDescription: "The Investment Analytics Pipeline is a sophisticated, production-grade solution for tracking and analyzing investment portfolios. The system features a microservices architecture with clear separation of concerns between data ingestion, processing, storage, and presentation layers. The pipeline begins with real-time data ingestion from professional financial APIs (Polygon.io and Alpaca), processes the data through a robust ETL pipeline orchestrated by Apache Airflow, and stores it in an optimized PostgreSQL database with time-series partitioning. The transformation layer, built with dbt, handles complex financial calculations including Time-Weighted Returns, Sharpe Ratio, and Alpha calculations. Data quality is ensured through comprehensive validation with Great Expectations, checking for data freshness, completeness, and business rule compliance. The interactive Streamlit dashboard provides real-time portfolio visualization, performance metrics, and risk analysis. The entire system is containerized with Docker Compose for easy deployment and scalability, and includes monitoring and alerting capabilities. The project demonstrates industry best practices in data engineering, including infrastructure as code, automated testing, and continuous monitoring.",
+    additionalLink: "https://github.com/pranvgarg/investment-analytics-pipeline"
+  },
+  {
+    highlighted: true,
+    image: "images/project/newspaper-vendor.png",
+    imageAlt: "Newspaper Vendor Model Optimization Results",
+    title: "Extended Newsvendor Model with Price Optimization",
+    link: "https://github.com/pranvgarg/Newspaper-Vendor-Model",
+    techStack: ["Python", "Pandas", "NumPy", "SciPy", "Matplotlib", "Linear Programming", "Quadratic Programming"],
+    learnings: "Developed an advanced newsvendor model that extends the traditional approach by incorporating price optimization and real-world cost factors. Gained expertise in mathematical optimization techniques and their application to inventory and pricing problems.",
+    insights: [
+      "Extended the classic newsvendor model to simultaneously optimize both production quantity and pricing decisions under demand uncertainty.",
+      "Implemented Quadratically Constrained Programming (QCP) to solve the optimization problem, considering price sensitivity and additional cost factors.",
+      "Achieved 5-10% higher profits compared to the standard newsvendor model by incorporating price elasticity of demand.",
+      "Conducted sensitivity analysis using bootstrapping to evaluate model robustness and identify optimal parameters.",
+      "Visualized optimization results and price-demand relationships to provide actionable business insights.",
+      "Identified optimal price point at approximately $0.95 and production quantity at 535 units for maximum profitability."
+    ],
+    fullDescription: "The Extended Newsvendor Model project focuses on solving a classic operations research problem with modern optimization techniques. The traditional newsvendor model determines the optimal inventory level for perishable goods under demand uncertainty, but often ignores pricing decisions. This project extends the model by incorporating price optimization, allowing for simultaneous determination of both optimal price and order quantity. The solution uses Quadratically Constrained Programming (QCP) to handle the non-linear relationship between price and demand, while considering real-world costs such as rush ordering and disposal fees. The implementation includes a comprehensive sensitivity analysis using bootstrapping to assess the robustness of the solution under different demand scenarios. The model was validated against historical data and demonstrated significant profit improvements over traditional approaches. The project showcases the power of mathematical optimization in business decision-making, particularly in inventory management and pricing strategy.",
+    additionalLink: "https://github.com/pranvgarg/Newspaper-Vendor-Model"
+  },
+  {
+    highlighted: true,
     image: "images/project/connect4.jpeg",
     imageAlt: "Connect 4 AI Game",
     title: "AI-Powered Connect 4: CNN & Transformer-Based Bot",
