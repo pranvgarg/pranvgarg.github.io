@@ -7,7 +7,7 @@
 const projects = [
   {
     highlighted: true,
-    image: "images/project/investment-analytics.png",
+    image: "images/project/investment-analytics-2.png",
     imageAlt: "Investment Analytics Pipeline Architecture",
     title: "Production-Grade Investment Analytics Pipeline",
     link: "https://github.com/pranvgarg/investment-analytics-pipeline",
