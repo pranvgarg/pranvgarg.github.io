@@ -105,22 +105,47 @@
         </div>
       </div>
       
-      <h2 class="section-heading">Work Experience</h2>
-      <p>
-        As a Solution Data Engineer and Business Analyst at  
-        <a href="https://www.kimberly-clark.com/" target="_blank">Kimberly-Clark</a>,  
-        I led enterprise-scale digital procurement initiatives, optimizing ETL pipelines,  
-        enhancing data architecture, and integrating SAP S/4 HANA with Coupa to improve  
-        procurement scalability and data accuracy. My work involved SQL query optimization,  
-        reducing execution latency, and implementing CI/CD pipelines for automated data ingestion  
-        using Azure Data Factory and Databricks. Additionally, I contributed to  
-        workflow automation, leveraging SCRUM methodologies to streamline vendor management  
-        and approval processes. Through data-driven forecasting and cloud-based infrastructure  
-        enhancements, I enabled efficient system integrations, reducing procurement redundancy and  
-        improving operational efficiency across global teams. Additionally,
-        I implemented ETL pipelines to integrate data into <a href="https://www.collibra.com/" target="_blank">Collibra</a>,
-        making data governance more robust and accessible for teams across the organization.
-      </p>
+      <section class="Work-experience">
+      <h2 class="section-heading" style="display: flex; align-items: center; gap: 1rem;">
+        Work Experience
+        <button id="toggle-work-exp" aria-expanded="false" aria-controls="work-experience-content" aria-label="Toggle Work Experience" style="font-size: 1.2rem; padding: 0.2em 0.6em; border-radius: 5px; border: 1px solid #ccc; background: var(--background, #f9f9f9); cursor: pointer; color: orange; line-height: 1; display: flex; align-items: center; justify-content: center;">
+          <span id="toggle-arrow">▶</span>
+        </button>
+      </h2>
+      <div id="work-experience-content" style="display: none;">
+        <section class="kimberly-clark">
+          <h1 class="section-heading">Kimberly-Clark - Solution Data Engineer and Business Analyst</h1>
+          <p>
+            As a Solution Data Engineer and Business Analyst at  
+            <a href="https://www.kimberly-clark.com/" target="_blank">Kimberly-Clark</a>,  
+            I led enterprise-scale digital procurement initiatives, optimizing ETL pipelines, enhancing data architecture, and integrating SAP S/4 HANA with Coupa to improve  
+            procurement scalability and data accuracy. My work involved SQL query optimization,  
+            reducing execution latency, and implementing CI/CD pipelines for automated data ingestion  
+            using Azure Data Factory and Databricks. Additionally, I contributed to  
+            workflow automation, leveraging SCRUM methodologies to streamline vendor management  
+            and approval processes. Through data-driven forecasting and cloud-based infrastructure  
+            enhancements, I enabled efficient system integrations, reducing procurement redundancy and  
+            improving operational efficiency across global teams. Additionally,
+            I implemented ETL pipelines to integrate data into <a href="https://www.collibra.com/" target="_blank">Collibra</a>,
+            making data governance more robust and accessible for teams across the organization.
+          </p>
+          <h1 class="section-heading">Architecting an Intelligent Procurement Assistant</h1>
+          <p>
+            At Kimberly-Clark, a significant part of my journey involved architecting and engineering an enterprise AI agent to automate and enhance procurement operations. I led the development of a <strong>GenAI-powered chatbot</strong>, supervising its creation from end to end. This process began with a deep dive into user needs, where I conducted detailed requirement analyses to ensure the final solution would be truly data-driven and effective.
+            The core of this initiative was building a technical solution that integrated <strong>Azure OpenAI</strong> and its powerful Large Language Models (LLMs) with our existing systems. I designed a sophisticated three-layer API gateway architecture to serve as the chatbot's foundation, creating a robust and scalable system to handle a massive volume of interactions. The chatbot was engineered to serve as an intelligent assistant, automating query resolution and streamlining workflows through an intelligent routing system that was continuously fine-tuned to optimize its performance.
+            To support global teams, I implemented multilingual NLP capabilities using Azure Cognitive Services, which allowed for dynamic entity extraction and translation. Furthermore, I designed unsupervised clustering pipelines to group supplier queries and automate category tagging, which improved routing accuracy and response consistency in ServiceNow. The project culminated in demonstrating the chatbot's value to executive audiences through a compelling proof-of-concept, showcasing its ability to transform procurement efficiency.
+          </p>
+        </section>
+
+        <section class="capstone-experience">
+        <h1 class="section-heading">A Glimpse into My Capstone Journey</h1>
+          <p>
+            As a Technical Lead (Data Science Lead) for my capstone project with <strong>NetApp</strong>, I had the opportunity to dive deep into a real-world business challenge. Our mission was to uncover the hidden stories within vast streams of customer data. We moved beyond just looking at numbers; we sought to understand the 'why' behind user actions. By applying statistical models and machine learning, we identified distinct patterns in how users engaged with the platform. This exploration led to the creation of strategic recommendations and segmentation models, offering a new lens through which the business could view its market and drive growth. It was a rewarding experience in translating raw data into a compelling narrative for strategic change.
+          </p>
+        </section>
+      </div>
+      </section>
+      
       <p>
         My journey in analytics and technology has been hands-on and rewarding. I've built expertise in Python, SQL,
         and machine learning while honing my data visualization skills using tools like Tableau and Power BI.
@@ -134,6 +159,9 @@
       </p>
     </section>
 
+    
+
+    <!-- Projects -->
     <section class="projects">
       <h2 class="section-heading">Projects</h2>
       <p>
@@ -169,5 +197,19 @@
   <script src="js/components/project-cards.js"></script>
   <script src="js/components/minecraft-player.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    // Toggle Work Experience Section
+    const toggleBtn = document.getElementById('toggle-work-exp');
+    const workExpContent = document.getElementById('work-experience-content');
+    const toggleArrow = document.getElementById('toggle-arrow');
+    if (toggleBtn && workExpContent && toggleArrow) {
+      toggleBtn.addEventListener('click', function() {
+        const isVisible = workExpContent.style.display !== 'none';
+        workExpContent.style.display = isVisible ? 'none' : '';
+        toggleBtn.setAttribute('aria-expanded', !isVisible);
+        toggleArrow.textContent = isVisible ? '▶' : '▼';
+      });
+    }
+  </script>
 </body>
 </html>
