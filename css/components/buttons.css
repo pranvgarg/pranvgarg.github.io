@@ -16,3 +16,77 @@ button:hover,
 a.button-link:hover {
   background-color: #005f99;
 }
+
+/* Work Experience Toggle Button */
+.work-exp-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 25px;
+  background: transparent;
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-exp-toggle:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+}
+
+.work-exp-toggle:active {
+  transform: translateY(0);
+}
+
+.work-exp-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.3);
+}
+
+.toggle-arrow {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.work-exp-toggle[aria-expanded="true"] .toggle-arrow {
+  transform: rotate(90deg);
+}
+
+.toggle-text {
+  font-size: 0.85rem;
+  transition: opacity 0.3s ease;
+}
+
+.work-exp-toggle[aria-expanded="true"] .toggle-text::after {
+  content: " Less";
+}
+
+.work-exp-toggle[aria-expanded="false"] .toggle-text::after {
+  content: " Details";
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .work-exp-toggle {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    gap: 0.3rem;
+  }
+  
+  .toggle-text {
+    font-size: 0.75rem;
+  }
+  
+  .toggle-arrow {
+    font-size: 0.7rem;
+  }
+}
