@@ -40,11 +40,13 @@
   .social-links .icon-img {
     width: 26px;
     height: 26px;
+    padding: 6px;
   }
   
   .social-links .cv-icon {
     width: 28px;
     height: 28px;
+    padding: 5px;
   }
   
   /* Tech Stack Badges for mobile */
@@ -121,11 +123,13 @@
   .social-links .icon-img {
     width: 22px;
     height: 22px;
+    padding: 5px;
   }
   
   .social-links .cv-icon {
     width: 24px;
     height: 24px;
+    padding: 4px;
   }
   
   /* Tech Stack Badges for small mobile */

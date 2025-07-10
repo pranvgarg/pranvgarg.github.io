@@ -53,9 +53,82 @@ header {
   width: 30px;
   height: 30px;
   margin: 0;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(0.3);
+}
+
+.social-links .icon-img:hover {
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  filter: grayscale(0);
+  background-color: var(--accent-color);
 }
 
 .social-links .cv-icon {
   width: 32px;
   height: 32px;
+  border-radius: 8px;
+  padding: 6px;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(0.2);
+}
+
+.social-links .cv-icon:hover {
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  filter: grayscale(0);
+  background-color: var(--accent-color);
+}
+
+/* Individual icon hover colors */
+.social-links a[href*="linkedin"] .icon-img:hover {
+  background-color: #0077b5;
+}
+
+.social-links a[href*="github"] .icon-img:hover {
+  background-color: #333;
+}
+
+.social-links a[href*="x.com"] .icon-img:hover,
+.social-links a[href*="twitter"] .icon-img:hover {
+  background-color: #1da1f2;
+}
+
+.social-links a[href*="instagram"] .icon-img:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-links a[href*=".pdf"] .cv-icon:hover {
+  background-color: #dc3545;
+}
+
+/* Add subtle animation on page load */
+@keyframes socialIconsLoad {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.social-links .icon-img,
+.social-links .cv-icon {
+  animation: socialIconsLoad 0.6s ease-out forwards;
+}
+
+.social-links a:nth-child(1) .icon-img,
+.social-links a:nth-child(1) .cv-icon { animation-delay: 0.1s; }
+.social-links a:nth-child(2) .icon-img { animation-delay: 0.2s; }
+.social-links a:nth-child(3) .icon-img { animation-delay: 0.3s; }
+.social-links a:nth-child(4) .icon-img { animation-delay: 0.4s; }
+.social-links a:nth-child(5) .icon-img { animation-delay: 0.5s; }
 }
